@@ -27,11 +27,43 @@ application.post('/data', (req, res) => {
   // Denna payload innehåller 2 st attribut, name och age
   const data = req.body
 
-  console.log(data)
+  // console.log(data)
   // Skriver ut data till konsol
   console.log(data.name)
   console.log(data.age)
 
+  // Hämta befintlig data från.json fil
+  fs.readFile(filePath, 'utf-8', (err, fetchJson) => {
+    if (err) console.error(err)
+
+    let lista = JSON.parse(fetchJson)
+
+    // Append Post-Payload till lista
+    lista.push(data)
+
+    // Spara lista til .json fil
+    fs.writeFile(filePath, JSON.stringify(lista, null, 2), (err) => {
+      // Om errer, skriv ut error
+      if (err) console.error(err)
+    })
+  })
+
+
   // Retunerar meddelande till klient
   res.send(`Hejsan ${data.name}, du är ${data.age} år gammal`)
+})
+
+// Get-Endpoint som returnerar JSON data
+application.get('/data', (req, res) => {
+  // Hämta JSON data från fil
+  fs.readFile(filePath, 'utf-8', (err, fetchJson) => {
+    if (err) res.send(err)
+
+    res.send(fetchJson)
+  })
+})
+
+// Get-Endpoint för About.html
+application.get('/about', (req, res) => {
+  res.sendfile('./about.html')
 })
