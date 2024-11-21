@@ -48,7 +48,6 @@ application.post('/data', (req, res) => {
     })
   })
 
-
   // Retunerar meddelande till klient
   res.send(`Hejsan ${data.name}, du är ${data.age} år gammal`)
 })
