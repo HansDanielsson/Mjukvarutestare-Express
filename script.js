@@ -23,7 +23,7 @@ document.getElementById('btnfetch').addEventListener('click', async () => {
   // --------------------------
 
   // Skapa en ForEach loop
-  data.forEach( (person) => {
+  data.forEach((person) => {
     // Skapa en TR komponent
     let tr = document.createElement('tr')
 

@@ -20,7 +20,7 @@ application.listen(portNr, () => {
 application.get('', (req, res) => {
   // Returnera Hello World
   // res.send('Hejsan')
-  res.sendFile('./index.html', {root: __dirname})
+  res.sendFile('./index.html', { root: __dirname })
 })
 
 application.post('/data', (req, res) => {
@@ -64,9 +64,9 @@ application.get('/data', (req, res) => {
 
 // Get-Endpoint för About.html
 application.get('/about', (req, res) => {
-  res.sendFile('./about.html', {root: __dirname})
+  res.sendFile('./about.html', { root: __dirname })
 })
 
 application.get('/script', (req, res) => {
-  res.sendFile('./script.js', {root: __dirname})
+  res.sendFile('./script.js', { root: __dirname })
 })
