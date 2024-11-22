@@ -41,7 +41,7 @@ application.post('/data', (req, res) => {
     // Append Post-Payload till lista
     lista.push(data)
 
-    // Spara lista til .json fil
+    // Spara lista till .json fil
     fs.writeFile(filePath, JSON.stringify(lista, null, 2), (err) => {
       // Om errer, skriv ut error
       if (err) console.error(err)

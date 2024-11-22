@@ -27,5 +27,5 @@ document.getElementById('btnFetch').addEventListener('click', async () => {
   }
 
   // Lägg till table i HTML-dokumentet
-  document.getElementById('tableOutput').appendChild(table)
+  document.getElementById('tableoutput').appendChild(table)
 })
