@@ -32,7 +32,7 @@ application.post('/data', (req, res) => {
   console.log(data.name)
   console.log(data.age)
 
-  // Hämta befintlig data från.json fil
+  // Hämta befintlig data från .json fil
   fs.readFile(filePath, 'utf-8', (err, fetchJson) => {
     if (err) console.error(err)
 
@@ -43,7 +43,7 @@ application.post('/data', (req, res) => {
 
     // Spara lista till .json fil
     fs.writeFile(filePath, JSON.stringify(lista, null, 2), (err) => {
-      // Om errer, skriv ut error
+      // Om error, skriv ut error
       if (err) console.error(err)
     })
   })
